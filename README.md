@@ -4,6 +4,8 @@ A jQuery multiselect dropdown plugin I built for my projects. Supports checkboxe
 
 ![Demo](https://img.shields.io/badge/jQuery-Plugin-blue) ![License](https://img.shields.io/badge/license-MIT-green)
 
+🔗 **[Live Demo](https://fungus007.github.io/InterActiveMultiSelect/)**
+
 ## Why I Made This
 
 I needed a simple multiselect that:
