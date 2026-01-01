@@ -41,9 +41,18 @@
               <option value="grape">Grape</option>
             </select>
             <label class="form-label mt-4">Initialization Example</label>
-            <pre class="bg-light p-2 rounded mb-3" style="font-size:13px; white-space:pre-line;"><code>$('#fruits').interActiveMultiSelect({
-    placeholder: 'Select Fruits'
-  });</code></pre>
+            <pre class="bg-light p-2 rounded mb-3" style="font-size:13px;"><code>&lt;!-- HTML --&gt;
+&lt;select id="fruits" name="SelectedFruits" multiple&gt;
+  &lt;option value="apple"&gt;Apple&lt;/option&gt;
+  &lt;option value="banana"&gt;Banana&lt;/option&gt;
+  ...
+&lt;/select&gt;
+
+&lt;!-- JavaScript --&gt;
+$('#fruits').interActiveMultiSelect({
+  mode: 'checkbox',        // default mode
+  placeholder: 'Select Fruits'
+});</code></pre>
           </div>
         </div>
       </div>
@@ -64,10 +73,19 @@
               <option value="au">Australia</option>
             </select>
             <label class="form-label mt-4">Initialization Example</label>
-            <pre class="bg-light p-2 rounded mb-3" style="font-size:13px; white-space:pre-line;"><code>$('#country').interActiveMultiSelect({
-    mode: 'radio',
-    placeholder: 'Select Country'
-  });</code></pre>
+            <pre class="bg-light p-2 rounded mb-3" style="font-size:13px;"><code>&lt;!-- HTML (no 'multiple' attribute for radio) --&gt;
+&lt;select id="country" name="SelectedCountry"&gt;
+  &lt;option value=""&gt;-- Choose --&lt;/option&gt;
+  &lt;option value="pk"&gt;Pakistan&lt;/option&gt;
+  &lt;option value="us"&gt;United States&lt;/option&gt;
+  ...
+&lt;/select&gt;
+
+&lt;!-- JavaScript --&gt;
+$('#country').interActiveMultiSelect({
+  mode: 'radio',           // single selection only
+  placeholder: 'Select Country'
+});</code></pre>
           </div>
         </div>
       </div>
@@ -91,11 +109,19 @@
               <option value="8">Zainab Fatima</option>
             </select>
             <label class="form-label mt-4">Initialization Example</label>
-            <pre class="bg-light p-2 rounded mb-3" style="font-size:13px; white-space:pre-line;"><code>$('#employeesSearch').interActiveMultiSelect({
-    placeholder: 'Select Employees',
-    search: true,
-    searchPlaceholder: 'Search employees...'
-  });</code></pre>
+            <pre class="bg-light p-2 rounded mb-3" style="font-size:13px;"><code>&lt;!-- HTML --&gt;
+&lt;select id="employeesSearch" name="EmployeeIds" multiple&gt;
+  &lt;option value="1"&gt;Ahmed Khan&lt;/option&gt;
+  &lt;option value="2"&gt;Sara Ali&lt;/option&gt;
+  ...
+&lt;/select&gt;
+
+&lt;!-- JavaScript --&gt;
+$('#employeesSearch').interActiveMultiSelect({
+  placeholder: 'Select Employees',
+  search: true,            // enables search box
+  searchPlaceholder: 'Search employees...'
+});</code></pre>
           </div>
         </div>
       </div>
@@ -116,12 +142,20 @@
               <option value="fsd">Faisalabad</option>
             </select>
             <label class="form-label mt-4">Initialization Example</label>
-            <pre class="bg-light p-2 rounded mb-3" style="font-size:13px; white-space:pre-line;"><code>$('#citySearch').interActiveMultiSelect({
-    mode: 'radio',
-    placeholder: 'Select City',
-    search: true,
-    searchPlaceholder: 'Search city...'
-  });</code></pre>
+            <pre class="bg-light p-2 rounded mb-3" style="font-size:13px;"><code>&lt;!-- HTML --&gt;
+&lt;select id="citySearch" name="City"&gt;
+  &lt;option value=""&gt;-- Choose City --&lt;/option&gt;
+  &lt;option value="khi"&gt;Karachi&lt;/option&gt;
+  ...
+&lt;/select&gt;
+
+&lt;!-- JavaScript --&gt;
+$('#citySearch').interActiveMultiSelect({
+  mode: 'radio',           // single selection
+  placeholder: 'Select City',
+  search: true,            // with search enabled
+  searchPlaceholder: 'Search city...'
+});</code></pre>
           </div>
         </div>
       </div>
@@ -138,7 +172,9 @@
             </button>
             <br />
             <label class="form-label mt-2">Initialization Example</label>
-            <pre class="bg-light p-2 rounded mb-0" style="font-size:13px; white-space:pre-line;"><code>$('#demoModal').on('shown.bs.modal', function(){
+            <pre class="bg-light p-2 rounded mb-0" style="font-size:13px;"><code>&lt;!-- Initialize when modal opens --&gt;
+$('#demoModal').on('shown.bs.modal', function(){
+  // Prevent double initialization
   if (!$('#employees').data('ias-init')){
     $('#employees').interActiveMultiSelect({
       placeholder: 'Select Employees',
@@ -177,11 +213,25 @@
               </optgroup>
             </select>
             <label class="form-label mt-4">Initialization Example</label>
-            <pre class="bg-light p-2 rounded mb-3" style="font-size:13px; white-space:pre-line;"><code>$('#skills').interActiveMultiSelect({
-    placeholder: 'Select Skills',
-    search: true,
-    searchPlaceholder: 'Search skills...'
-  });</code></pre>
+            <pre class="bg-light p-2 rounded mb-3" style="font-size:13px;"><code>&lt;!-- HTML with optgroup for grouping --&gt;
+&lt;select id="skills" name="SkillIds" multiple&gt;
+  &lt;optgroup label="Frontend"&gt;
+    &lt;option value="html"&gt;HTML&lt;/option&gt;
+    &lt;option value="css"&gt;CSS&lt;/option&gt;
+    &lt;option value="js"&gt;JavaScript&lt;/option&gt;
+  &lt;/optgroup&gt;
+  &lt;optgroup label="Backend"&gt;
+    &lt;option value="csharp"&gt;C#&lt;/option&gt;
+    &lt;option value="python"&gt;Python&lt;/option&gt;
+  &lt;/optgroup&gt;
+&lt;/select&gt;
+
+&lt;!-- JavaScript --&gt;
+$('#skills').interActiveMultiSelect({
+  placeholder: 'Select Skills',
+  search: true,            // filter within groups
+  searchPlaceholder: 'Search skills...'
+});</code></pre>
           </div>
         </div>
       </div>
@@ -204,10 +254,23 @@
                   <option value="5">Sports</option>
                 </select>
             <label class="form-label mt-4">Initialization Example</label>
-            <pre class="bg-light p-2 rounded mb-3" style="font-size:13px; white-space:pre-line;"><code>$('#categories').interActiveMultiSelect({
-    placeholder: 'Select Categories',
-    search: true
-  });</code></pre>
+            <pre class="bg-light p-2 rounded mb-3" style="font-size:13px;"><code>&lt;!-- ASP.NET MVC Razor View --&gt;
+&lt;select id="categories" name="CategoryIds" multiple&gt;
+  @foreach(var cat in Model.Categories) {
+    &lt;option value="@cat.Id" 
+      @(Model.Selected.Contains(cat.Id) ? "selected" : "")&gt;
+      @cat.Name
+    &lt;/option&gt;
+  }
+&lt;/select&gt;
+
+&lt;!-- JavaScript --&gt;
+$('#categories').interActiveMultiSelect({
+  placeholder: 'Select Categories',
+  search: true
+});
+
+// Controller receives: int[] CategoryIds</code></pre>
               </div>
               <button type="submit" class="btn btn-success">Submit Form</button>
               <button type="button" class="btn btn-secondary ms-2" id="showValues">Show Selected Values</button>
@@ -232,9 +295,25 @@
               <option value="yellow">Yellow</option>
             </select>
             <label class="form-label mt-4">Initialization Example</label>
-            <pre class="ias-dark-code-block mb-3" style="font-size:13px; white-space:pre-line;"><code>$('#colors').interActiveMultiSelect({
-    placeholder: 'Select Colors'
-  });</code></pre>
+            <pre class="ias-dark-code-block mb-3" style="font-size:13px;"><code>&lt;!-- HTML with custom class --&gt;
+&lt;select id="colors" class="form-select ias-dark" multiple&gt;
+  &lt;option value="red"&gt;Red&lt;/option&gt;
+  ...
+&lt;/select&gt;
+
+&lt;!-- CSS Variables for dark theme --&gt;
+.ias-dark + .ias-wrapper {
+  --ias-btn-bg: #343a40;
+  --ias-btn-color: #fff;
+  --ias-dropdown-bg: #343a40;
+  --ias-item-color: #fff;
+  --ias-item-hover-bg: #495057;
+}
+
+&lt;!-- JavaScript --&gt;
+$('#colors').interActiveMultiSelect({
+  placeholder: 'Select Colors'
+});</code></pre>
           </div>
         </div>
       </div>
@@ -251,9 +330,20 @@
               <option value="archived">Archived</option>
             </select>
             <label class="form-label mt-4">Initialization Example</label>
-            <pre class="bg-light p-2 rounded mb-3" style="font-size:13px; white-space:pre-line;"><code>$('#status').interActiveMultiSelect({
-    placeholder: 'Select Status'
-  });</code></pre>
+            <pre class="bg-light p-2 rounded mb-3" style="font-size:13px;"><code>&lt;!-- HTML with disabled attribute --&gt;
+&lt;select id="status" name="Status" multiple&gt;
+  &lt;option value="active"&gt;Active&lt;/option&gt;
+  &lt;option value="pending"&gt;Pending&lt;/option&gt;
+  &lt;option value="disabled" disabled&gt;
+    Disabled (not selectable)
+  &lt;/option&gt;
+  &lt;option value="archived"&gt;Archived&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;!-- JavaScript --&gt;
+$('#status').interActiveMultiSelect({
+  placeholder: 'Select Status'
+});</code></pre>
           </div>
         </div>
       </div>

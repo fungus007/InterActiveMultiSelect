@@ -21,9 +21,18 @@ So I built one.
 **1. Include the files**
 
 ```html
+<!-- Local files -->
 <link href="css/InterActiveMultiSelect.css" rel="stylesheet">
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 <script src="js/InterActiveMultiSelect.js"></script>
+```
+
+**Or use CDN:**
+
+```html
+<link href="https://cdn.jsdelivr.net/gh/fungus007/InterActiveMultiSelect@v1.0.1/css/InterActiveMultiSelect.min.css" rel="stylesheet">
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/fungus007/InterActiveMultiSelect@v1.0.1/js/InterActiveMultiSelect.min.js"></script>
 ```
 
 **2. Create a select**
